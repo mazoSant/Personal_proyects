@@ -21,8 +21,8 @@ def normalize(s):
         return s
 def run():
     palabra_adivinar=normalize(read_data())
-    print(palabra_adivinar)
     palabra_adivinando= "_"*len(normalize(read_data()))
+    
     while palabra_adivinar != palabra_adivinando:
         print(palabra_adivinando)
         lyrics=str(input("Ingrese una letra: "))
@@ -31,11 +31,14 @@ def run():
             for i,x in enumerate(palabra_adivinar):
                 if x==lyrics:
                     palabra_adivinando[i]=x
-                    palabra_adivinando="".join(palabra_adivinando)           
-    print("Felicitaciones GANASTE")
-                    
-    
-run()
+            palabra_adivinando="".join(palabra_adivinando)
+        elif lyrics not in palabra_adivinar:
+            print("Prueba con otra letra")
+        os.system('cls')         
+    print("Felicitaciones GANASTE, la palabra era: "+ palabra_adivinando.upper())
+                  
+if __name__=='__main__':   
+ run()
 
 
 
