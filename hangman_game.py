@@ -31,10 +31,11 @@ def run():
             for i,x in enumerate(palabra_adivinar):
                 if x==lyrics:
                     palabra_adivinando[i]=x
-            palabra_adivinando="".join(palabra_adivinando)
-        elif lyrics not in palabra_adivinar:
+            palabra_adivinando="".join(palabra_adivinando)      
+        os.system('cls')
+        if lyrics not in palabra_adivinar:
             print("Prueba con otra letra")
-        os.system('cls')         
+               
     print("Felicitaciones GANASTE, la palabra era: "+ palabra_adivinando.upper())
                   
 if __name__=='__main__':   
